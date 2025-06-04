@@ -20,12 +20,18 @@ function NotePage() {
           <div className={styles.main}>
             <h1 className={styles.title}>{note.title}</h1>
             <p className={styles.content}>{note.content}</p>
+            <br />
+            <Link className="link" to={`/edit/${note.id}`}>
+              Edit Note
+            </Link>
           </div>
         )}
         {!loading && !note && (
           <div className={styles.notFound}>
             <p>Note not found</p>
-            <Link to="/">Go back to notes</Link>
+            <Link className="link" to="/">
+              Go back to notes
+            </Link>
           </div>
         )}
       </div>

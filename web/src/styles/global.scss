@@ -1,4 +1,5 @@
 /* CSS Reset */
+@import "variables.scss";
 *,
 *::before,
 *::after {
@@ -9,7 +10,7 @@
 
 html,
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   font-size: 16px;
   color: #333333;
 
@@ -20,4 +21,14 @@ body {
   max-width: 720px;
   margin: 0 auto;
   padding: 16px;
+}
+
+.link {
+  text-decoration: none;
+  color: $primary-color;
+
+  &:hover {
+    color: $primary-color-dark;
+    text-decoration: underline;
+  }
 }

@@ -6,7 +6,7 @@ const bodyParser = require("express").json;
 const app = express();
 const port = 5000;
 
-// Налаштування для парсингу JSON
+// Налаштування для JSON
 app.use(bodyParser());
 
 const corsOptions = {
@@ -15,10 +15,8 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-// Підключення до БД або створення, якщо її нема
 const db = new sqlite3.Database("notes.db");
 
-// Створення таблиці, якщо її ще нема
 db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS notes (
@@ -31,9 +29,6 @@ db.serialize(() => {
   `);
 });
 
-// --- ROUTES ---
-
-// Отримати всі нотатки
 app.get("/notes", (req, res) => {
   db.all("SELECT * FROM notes", [], (err, rows) => {
     if (err) return res.status(500).json({ error: err.message });
@@ -41,7 +36,6 @@ app.get("/notes", (req, res) => {
   });
 });
 
-// Створити нову нотатку
 app.post("/notes", (req, res) => {
   const { title, content } = req.body;
   if (!title || !content)
@@ -63,7 +57,6 @@ app.post("/notes", (req, res) => {
   );
 });
 
-// Оновити нотатку
 app.put("/notes/:id", (req, res) => {
   const { title, content } = req.body;
   if (!title || !content)
@@ -82,7 +75,6 @@ app.put("/notes/:id", (req, res) => {
   );
 });
 
-// Видалити нотатку
 app.delete("/notes/:id", (req, res) => {
   const { id } = req.params;
   db.run(`DELETE FROM notes WHERE id=?`, [id], function (err) {
@@ -93,7 +85,6 @@ app.delete("/notes/:id", (req, res) => {
   });
 });
 
-// Запуск сервера
 app.listen(port, () => {
   console.log(`API запущено: http://localhost:${port}`);
 });
