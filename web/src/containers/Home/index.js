@@ -9,7 +9,6 @@ function HomePage() {
   const { notes, loading } = useContext(NotesContext);
   const navigate = useNavigate();
 
-  if (loading) return <div>Loading...</div>;
   return (
     <Layout>
       {notes.map((item) => (

@@ -2,11 +2,12 @@ import PropTypes from "prop-types";
 
 import styles from "./styles.module.scss";
 
-export function TextArea({ value, onChange, placeholder, rows = 4 }) {
+export function TextArea({ value, name, placeholder, rows = 6, onChange }) {
   return (
     <textarea
       value={value}
-      onChange={(e) => onChange(e.target.value)}
+      name={name}
+      onChange={onChange}
       placeholder={placeholder}
       rows={rows}
       className={styles.textarea}
@@ -16,6 +17,7 @@ export function TextArea({ value, onChange, placeholder, rows = 4 }) {
 
 TextArea.propTypes = {
   value: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   rows: PropTypes.number,

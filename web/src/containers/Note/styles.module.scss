@@ -1,0 +1,15 @@
+@use "styles/variables" as *;
+
+.main{
+  padding: 20px 0;
+}
+
+.title{
+  margin-bottom: 20px;
+}
+
+.notFound{
+  padding-top: 20%;
+  text-align: center;
+  font-size: 24px;
+}

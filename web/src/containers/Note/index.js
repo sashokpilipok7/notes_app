@@ -1,0 +1,35 @@
+import { useContext, useMemo } from "react";
+import { Link, useParams } from "react-router-dom";
+
+import { NotesContext } from "containers/App";
+import { Layout } from "components";
+import styles from "./styles.module.scss";
+
+function NotePage() {
+  const { id } = useParams();
+  const { notes, loading } = useContext(NotesContext);
+
+  const note = useMemo(() => {
+    return notes.find((note) => note.id === +id);
+  }, [id, notes]);
+
+  return (
+    <Layout>
+      <div className={styles.note}>
+        {note && (
+          <div className={styles.main}>
+            <h1 className={styles.title}>{note.title}</h1>
+            <p className={styles.content}>{note.content}</p>
+          </div>
+        )}
+        {!loading && !note && (
+          <div className={styles.notFound}>
+            <p>Note not found</p>
+            <Link to="/">Go back to notes</Link>
+          </div>
+        )}
+      </div>
+    </Layout>
+  );
+}
+export default NotePage;
