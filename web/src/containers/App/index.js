@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router";
 
 import api from "utils/api";
 import HomePage from "containers/Home";
+import CreateNotePage from "containers/CreateNote";
 
 export const NotesContext = createContext({
   notes: [],
@@ -61,6 +62,8 @@ function App() {
     >
       <Routes>
         <Route exact path="/" element={<HomePage />} />
+        <Route path="/create" element={<CreateNotePage mode="create" />} />
+        <Route path="/edit/:id" element={<CreateNotePage mode="edit" />} />
         {/* <Route path="/search" element={<SearchPage />} />
       <Route path="/changed" element={<ChangedCurrencyPage />} />
       <Route path="/currency/:id" element={<CurrencyPage />} /> */}

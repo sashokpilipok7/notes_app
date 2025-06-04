@@ -1,0 +1,36 @@
+@use "styles/variables" as *;
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 20px;
+    margin-bottom: 16px;
+
+}
+
+.title {
+  color: $primary-color;
+  font-size: 18px;
+
+  @media screen and (min-width: $small-screen) {
+    font-size: 24px;
+    
+  }
+}
+.navList {
+    display: flex;
+    list-style: none;
+}
+
+.navLink {
+    text-decoration: none;
+    color: $text-color;
+    font-size: 18px;
+    margin-left: 20px;
+
+    &:hover {
+        color: $primary-color-dark;
+    }
+}
