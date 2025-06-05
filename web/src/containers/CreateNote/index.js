@@ -42,14 +42,18 @@ function CreateNotePage({ mode }) {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    if (mode === NOTE_EDIT) {
-      const result = await api.put(`/notes/${id}`, { ...note });
-      updateNote(result);
-    }
-    if (mode === NOTE_CREATE) {
-      const result = await api.post("/notes", { ...note });
-      addNote(result);
-      setNote(NOTE_EMPTY);
+    try {
+      if (mode === NOTE_EDIT) {
+        const result = await api.put(`/notes/${id}`, { ...note });
+        updateNote(result);
+      }
+      if (mode === NOTE_CREATE) {
+        const result = await api.post("/notes", { ...note });
+        addNote(result);
+        setNote(NOTE_EMPTY);
+      }
+    } catch (err) {
+      console.error(err);
     }
   }
 

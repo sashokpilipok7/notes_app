@@ -9,15 +9,19 @@ const DELETE_CONFIRMATION_MESSAGE =
   "Are you sure you want to delete this note?";
 
 function HomePage() {
-  const { notes, loading, removeNote } = useContext(NotesContext);
   const navigate = useNavigate();
+  const { notes, loading, removeNote } = useContext(NotesContext);
 
   async function handleDelete(id) {
     if (!id) return;
 
     if (window.confirm(DELETE_CONFIRMATION_MESSAGE)) {
-      await api.delete(`/notes/${id}`);
-      removeNote(id);
+      try {
+        await api.delete(`/notes/${id}`);
+        removeNote(id);
+      } catch (err) {
+        console.error(err);
+      }
     }
   }
 
