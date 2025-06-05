@@ -12,7 +12,7 @@
     &:focus {
         border-color: $primary-color;
         outline: none;
-        box-shadow: 0 0 0 0.2rem $primary-color-dark;
+        box-shadow: 0 0 0 3px $primary-color-dark;
     }
     
 }

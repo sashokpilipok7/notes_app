@@ -22,7 +22,6 @@ function CreateNotePage({ mode }) {
   const activeNote = useMemo(() => {
     if (mode === NOTE_EDIT && id) {
       const note = notes.find((note) => note.id === +id);
-      console.log("activeNote", note);
       return { title: note?.title, content: note?.content };
     }
     return NOTE_EMPTY;

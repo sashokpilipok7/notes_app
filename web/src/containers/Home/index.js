@@ -9,7 +9,7 @@ const DELETE_CONFIRMATION_MESSAGE =
   "Are you sure you want to delete this note?";
 
 function HomePage() {
-  const { notes, removeNote } = useContext(NotesContext);
+  const { notes, loading, removeNote } = useContext(NotesContext);
   const navigate = useNavigate();
 
   async function handleDelete(id) {
@@ -32,6 +32,15 @@ function HomePage() {
       {notes.map((item) => (
         <NoteCard item={item} onDelete={handleDelete} onEdit={handleEdit} />
       ))}
+      {notes.length === 0 && !loading && (
+        <div className="notFound">
+          <p>No notes available</p>
+
+          <Link className="link" to="/create">
+            Create Note
+          </Link>
+        </div>
+      )}
     </Layout>
   );
 }

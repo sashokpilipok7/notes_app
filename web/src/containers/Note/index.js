@@ -27,7 +27,7 @@ function NotePage() {
           </div>
         )}
         {!loading && !note && (
-          <div className={styles.notFound}>
+          <div className="notFound">
             <p>Note not found</p>
             <Link className="link" to="/">
               Go back to notes
