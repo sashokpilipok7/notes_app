@@ -1,3 +1,5 @@
+import { notify } from "utils/notification";
+
 class ApiClient {
   constructor() {
     this.baseUrl = process.env.REACT_APP_API_URL;
@@ -23,10 +25,13 @@ class ApiClient {
           return response.json();
         })
         .then((json) => {
+          if (method === "POST" || method === "PUT") {
+            notify("Success!", "error");
+          }
           resolve(json);
         })
         .catch((err) => {
-          //   toast.error(err); FIXME
+          notify("Error during processing", "error");
           reject(err);
         });
     });

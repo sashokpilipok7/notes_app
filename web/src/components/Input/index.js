@@ -6,6 +6,7 @@ export function Input({
   placeholder = "",
   name,
   value,
+  required,
   onChange,
 }) {
   return (
@@ -16,6 +17,7 @@ export function Input({
       value={value}
       onChange={onChange}
       className={styles.input}
+      required={!!required}
     />
   );
 }

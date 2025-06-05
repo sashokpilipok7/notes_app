@@ -67,6 +67,7 @@ function CreateNotePage({ mode }) {
           placeholder="Note Title"
           className={styles.input}
           value={note?.title}
+          required
           onChange={handleChange}
         />
         <TextArea
@@ -74,6 +75,7 @@ function CreateNotePage({ mode }) {
           placeholder="Note Content"
           className={styles.textarea}
           value={note?.content}
+          required
           onChange={handleChange}
         />
         <Button type="submit" className={styles.button}>

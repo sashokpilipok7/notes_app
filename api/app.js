@@ -70,7 +70,7 @@ app.put("/notes/:id", (req, res) => {
       if (err) return res.status(500).json({ error: err.message });
       if (this.changes === 0)
         return res.status(404).json({ error: "Note not found" });
-      res.json({ id, title, content, updatedAt: now });
+      res.json({ id: Number(id), title, content, updatedAt: now });
     }
   );
 });

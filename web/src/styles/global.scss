@@ -32,3 +32,20 @@ body {
     text-decoration: underline;
   }
 }
+
+.notification{
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 8px;
+
+  background-color: $success-color;
+  color: $light-text-color;
+  border-left: 8px solid darken( $success-color, 10%);
+  font-size: 20px;
+
+  &.error{
+    background-color: $error-bg;
+    border-color: darken($error-bg, 10%);
+  }
+}

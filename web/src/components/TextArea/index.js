@@ -2,7 +2,14 @@ import PropTypes from "prop-types";
 
 import styles from "./styles.module.scss";
 
-export function TextArea({ value, name, placeholder, rows = 6, onChange }) {
+export function TextArea({
+  value,
+  name,
+  placeholder,
+  required,
+  rows = 6,
+  onChange,
+}) {
   return (
     <textarea
       value={value}
@@ -10,6 +17,7 @@ export function TextArea({ value, name, placeholder, rows = 6, onChange }) {
       onChange={onChange}
       placeholder={placeholder}
       rows={rows}
+      required={!!required}
       className={styles.textarea}
     />
   );

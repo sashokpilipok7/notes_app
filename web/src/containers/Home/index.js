@@ -1,34 +1,36 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import api from "utils/api";
 import { NotesContext } from "containers/App";
-import { Button, Layout } from "components";
-import styles from "./styles.module.scss";
+import { NoteCard, Layout } from "components";
+
+const DELETE_CONFIRMATION_MESSAGE =
+  "Are you sure you want to delete this note?";
 
 function HomePage() {
-  const { notes, loading } = useContext(NotesContext);
+  const { notes, removeNote } = useContext(NotesContext);
   const navigate = useNavigate();
+
+  async function handleDelete(id) {
+    if (!id) return;
+
+    if (window.confirm(DELETE_CONFIRMATION_MESSAGE)) {
+      await api.delete(`/notes/${id}`);
+      removeNote(id);
+    }
+  }
+
+  function handleEdit(id) {
+    if (!id) return;
+
+    navigate(`/edit/${id}`);
+  }
 
   return (
     <Layout>
       {notes.map((item) => (
-        <div to={`notes/${item?.id}`} className={styles.noteCard} key={item.id}>
-          <div className={styles.noteCardContent}>
-            <h2>{item?.title}</h2>
-            <p className={styles.noteCardText}> {item.content}</p>
-            <Link to={`notes/${item?.id}`} className={styles.noteCardLink}>
-              Read more
-            </Link>
-          </div>
-          <div className={styles.noteCardActions}>
-            <Button onClick={() => navigate(`/edit/${item?.id}`)} mode="info">
-              Edit
-            </Button>
-            <Button to={`notes/${item?.id}/delete`} mode="danger">
-              Delete
-            </Button>
-          </div>
-        </div>
+        <NoteCard item={item} onDelete={handleDelete} onEdit={handleEdit} />
       ))}
     </Layout>
   );
