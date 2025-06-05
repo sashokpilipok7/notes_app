@@ -2,7 +2,7 @@
 
 This project UI was created with CRA, css modules, Context API. \
 This project API was created with Node.js + express. \
-Project database is Sqlite. "SQL queries for additionaly demonstrate sql skills" \
+Project database is Sqlite. "SQL queries for additionaly demonstrate sql skills" 
 
 ## To run API
 go to `./api` directory
