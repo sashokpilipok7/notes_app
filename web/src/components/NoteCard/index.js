@@ -20,7 +20,7 @@ function NoteActions({ id, onDelete = () => {}, onEdit = () => {} }) {
 
 export function NoteCard({ item, onDelete, onEdit }) {
   return (
-    <div to={`notes/${item?.id}`} className={styles.noteCard} key={item.id}>
+    <div className={styles.noteCard} key={item.id}>
       <div className={styles.noteCardContent}>
         <h2>{item?.title}</h2>
         <p className={styles.noteCardText}> {item.content}</p>

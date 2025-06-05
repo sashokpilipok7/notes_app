@@ -44,6 +44,7 @@ class ApiClient {
       config,
     });
   }
+
   post(url, data, config) {
     return this._request({
       method: "POST",
@@ -52,6 +53,7 @@ class ApiClient {
       config,
     });
   }
+
   put(url, data, config) {
     return this._request({
       method: "PUT",
@@ -60,6 +62,7 @@ class ApiClient {
       config,
     });
   }
+
   delete(url, config) {
     return this._request({
       method: "DELETE",
