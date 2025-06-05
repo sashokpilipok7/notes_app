@@ -1,11 +1,21 @@
+import PropTypes from "prop-types";
 import styles from "./styles.module.scss";
 
-function Button({ children, onClick, className = "", ...props }) {
+export function Button({ children, onClick, mode, className = "", ...props }) {
   return (
-    <button className={styles.button} onClick={onClick} {...props}>
+    <button
+      className={`${styles.button} ${styles[mode]} ${className}`}
+      onClick={onClick}
+      {...props}
+    >
       {children}
     </button>
   );
 }
 
-export default Button;
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func,
+  mode: PropTypes.string,
+  className: PropTypes.string,
+};
