@@ -13,7 +13,7 @@ go to `./api` directory
 
 
 ## To work with UI
-go to `./web` directory \
+go to `./web` directory 
 
 create .env file with REACT_APP_API_URL=http://localhost:5000
 
