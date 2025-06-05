@@ -1,8 +1,8 @@
 # Notes UI and API
 
-This project UI was created with CRA, css modules, Context API.
-This project API was created with Node.js + express.
-Project database is Sqlite. "SQL queries for additionaly demonstrate sql skills"
+This project UI was created with CRA, css modules, Context API. \
+This project API was created with Node.js + express. \
+Project database is Sqlite. "SQL queries for additionaly demonstrate sql skills" \
 
 ## To run API
 go to `./api` directory
@@ -13,7 +13,7 @@ go to `./api` directory
 
 
 ## To work with UI
-go to `./web` directory
+go to `./web` directory \
 
 create .env file with REACT_APP_API_URL=http://localhost:5000
 
@@ -23,5 +23,5 @@ Open http://localhost:3000 to view it in your browser.
 
 ### Deployment
 
-npm install -g serve
+npm install -g serve \
 serve -s build
