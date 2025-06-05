@@ -34,7 +34,12 @@ function HomePage() {
   return (
     <Layout>
       {notes.map((item) => (
-        <NoteCard item={item} onDelete={handleDelete} onEdit={handleEdit} />
+        <NoteCard
+          key={item?.id}
+          item={item}
+          onDelete={handleDelete}
+          onEdit={handleEdit}
+        />
       ))}
       {notes.length === 0 && !loading && (
         <div className="notFound">

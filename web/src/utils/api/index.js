@@ -26,7 +26,7 @@ class ApiClient {
         })
         .then((json) => {
           if (method === "POST" || method === "PUT") {
-            notify("Success!", "error");
+            notify("Success!");
           }
           resolve(json);
         })

@@ -1,5 +1,5 @@
 import { useState, useContext, useMemo } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import api from "utils/api";
@@ -17,6 +17,7 @@ const NOTE_EMPTY = {
 
 function CreateNotePage({ mode }) {
   const { id } = useParams();
+  const navigate = useNavigate();
   const { notes, addNote, updateNote } = useContext(NotesContext);
 
   const activeNote = useMemo(() => {
@@ -46,6 +47,7 @@ function CreateNotePage({ mode }) {
       if (mode === NOTE_EDIT) {
         const result = await api.put(`/notes/${id}`, { ...note });
         updateNote(result);
+        navigate(`/notes/${id}`);
       }
       if (mode === NOTE_CREATE) {
         const result = await api.post("/notes", { ...note });

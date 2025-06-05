@@ -29,7 +29,7 @@ db.serialize(() => {
   `);
 });
 
-app.get("/notes", (req, res) => {
+app.get("/notes", (_, res) => {
   db.all("SELECT * FROM notes", [], (err, rows) => {
     if (err) return res.status(500).json({ error: err.message });
     res.json(rows);
@@ -41,6 +41,7 @@ app.post("/notes", (req, res) => {
   if (!title || !content)
     return res.status(400).json({ error: "Title and content are required" });
   const now = new Date().toISOString();
+
   db.run(
     `INSERT INTO notes (title, content, createdAt, updatedAt) VALUES (?, ?, ?, ?)`,
     [title, content, now, now],
@@ -61,15 +62,15 @@ app.put("/notes/:id", (req, res) => {
   const { title, content } = req.body;
   if (!title || !content)
     return res.status(400).json({ error: "Title and content are required" });
+
   const { id } = req.params;
   const now = new Date().toISOString();
+
   db.run(
     `UPDATE notes SET title=?, content=?, updatedAt=? WHERE id=?`,
     [title, content, now, id],
     function (err) {
       if (err) return res.status(500).json({ error: err.message });
-      if (this.changes === 0)
-        return res.status(404).json({ error: "Note not found" });
       res.json({ id: Number(id), title, content, updatedAt: now });
     }
   );
@@ -77,14 +78,13 @@ app.put("/notes/:id", (req, res) => {
 
 app.delete("/notes/:id", (req, res) => {
   const { id } = req.params;
+
   db.run(`DELETE FROM notes WHERE id=?`, [id], function (err) {
     if (err) return res.status(500).json({ error: err.message });
-    if (this.changes === 0)
-      return res.status(404).json({ error: "Note not found" });
     res.json({ success: true });
   });
 });
 
 app.listen(port, () => {
-  console.log(`API запущено: http://localhost:${port}`);
+  console.log(`API доступно по: http://localhost:${port}`);
 });
