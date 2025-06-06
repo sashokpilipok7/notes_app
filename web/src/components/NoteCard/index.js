@@ -36,7 +36,7 @@ export function NoteCard({ item, onDelete, onEdit }) {
 NoteActions.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   onDelete: PropTypes.func.isRequired,
-  oneEdit: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired,
 };
 
 NoteCard.propTypes = {
@@ -46,5 +46,5 @@ NoteCard.propTypes = {
     content: PropTypes.string.isRequired,
   }).isRequired,
   onDelete: PropTypes.func.isRequired,
-  oneEdit: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired,
 };

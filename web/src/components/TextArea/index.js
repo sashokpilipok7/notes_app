@@ -2,14 +2,7 @@ import PropTypes from "prop-types";
 
 import styles from "./styles.module.scss";
 
-export function TextArea({
-  value,
-  name,
-  placeholder,
-  required,
-  rows = 6,
-  onChange,
-}) {
+export function TextArea({ value, name, placeholder, required, rows = 6, onChange }) {
   return (
     <textarea
       value={value}
@@ -29,6 +22,7 @@ TextArea.propTypes = {
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   rows: PropTypes.number,
+  required: PropTypes.bool,
 };
 
 export default TextArea;

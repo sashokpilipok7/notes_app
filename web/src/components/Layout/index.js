@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import PropTypes from "prop-types";
 
 import { NotesContext } from "containers/App";
 import { Header } from "components";
@@ -20,3 +21,7 @@ export function Layout({ children }) {
     </>
   );
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};

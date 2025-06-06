@@ -5,8 +5,7 @@ import api from "utils/api";
 import { NotesContext } from "containers/App";
 import { NoteCard, Layout } from "components";
 
-const DELETE_CONFIRMATION_MESSAGE =
-  "Are you sure you want to delete this note?";
+const DELETE_CONFIRMATION_MESSAGE = "Are you sure you want to delete this note?";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -34,12 +33,7 @@ function HomePage() {
   return (
     <Layout>
       {notes.map((item) => (
-        <NoteCard
-          key={item?.id}
-          item={item}
-          onDelete={handleDelete}
-          onEdit={handleEdit}
-        />
+        <NoteCard key={item?.id} item={item} onDelete={handleDelete} onEdit={handleEdit} />
       ))}
       {notes.length === 0 && !loading && (
         <div className="notFound">

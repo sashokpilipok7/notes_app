@@ -1,13 +1,12 @@
 @use "styles/variables" as *;
 
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    padding: 10px 0;
-    margin-bottom: 16px;
-
+  padding: 10px 0;
+  margin-bottom: 16px;
 }
 
 .title {
@@ -16,21 +15,20 @@
 
   @media screen and (min-width: $small-screen) {
     font-size: 24px;
-    
   }
 }
 .navList {
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
 }
 
 .navLink {
-    text-decoration: none;
-    color: $text-color;
-    font-size: 18px;
-    margin-left: 20px;
+  text-decoration: none;
+  color: $text-color;
+  font-size: 18px;
+  margin-left: 20px;
 
-    &:hover {
-        color: $primary-color-dark;
-    }
+  &:hover {
+    color: $primary-color-dark;
+  }
 }

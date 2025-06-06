@@ -61,9 +61,7 @@ function CreateNotePage({ mode }) {
 
   return (
     <Layout>
-      {mode === NOTE_CREATE && (
-        <h2 className={styles.title}>Create a new note</h2>
-      )}
+      {mode === NOTE_CREATE && <h2 className={styles.title}>Create a new note</h2>}
       {mode === NOTE_EDIT && <h2 className={styles.title}>Edit my note</h2>}
       <form onSubmit={handleSubmit} className={styles.form}>
         <Input
