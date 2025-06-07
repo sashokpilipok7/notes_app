@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "./styles.module.scss";
+import styles from "./styles.module.css";
 
 export function Input({ type = "text", placeholder = "", name, value, required, onChange }) {
   return (

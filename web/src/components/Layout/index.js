@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { NotesContext } from "containers/App";
 import { Header } from "components";
 
-import styles from "./styles.module.scss";
+import styles from "./styles.module.css";
 
 export function Layout({ children }) {
   const { loading } = useContext(NotesContext);

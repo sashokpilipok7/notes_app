@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 import { NotesContext } from "containers/App";
 import { Layout } from "components";
-import styles from "./styles.module.scss";
+import styles from "./styles.module.css";
 
 function NotePage() {
   const { id } = useParams();

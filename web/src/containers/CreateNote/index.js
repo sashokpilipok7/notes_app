@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import api from "utils/api";
 import { NotesContext } from "containers/App";
 import { Input, TextArea, Button, Layout } from "components";
-import styles from "./styles.module.scss";
+import styles from "./styles.module.css";
 
 const NOTE_CREATE = "create";
 const NOTE_EDIT = "edit";

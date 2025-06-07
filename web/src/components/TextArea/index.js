@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import styles from "./styles.module.scss";
+import styles from "./styles.module.css";
 
 export function TextArea({ value, name, placeholder, required, rows = 6, onChange }) {
   return (

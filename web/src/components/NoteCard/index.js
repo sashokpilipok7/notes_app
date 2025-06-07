@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Button } from "components/Button";
 
-import styles from "./styles.module.scss";
+import styles from "./styles.module.css";
 
 function NoteActions({ id, onDelete = () => {}, onEdit = () => {} }) {
   return (

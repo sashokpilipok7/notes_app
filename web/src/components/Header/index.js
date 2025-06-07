@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import styles from "./styles.module.scss";
+import styles from "./styles.module.css";
 
 export function Header() {
   return (

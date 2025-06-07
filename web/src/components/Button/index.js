@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "./styles.module.scss";
+import styles from "./styles.module.css";
 
 export function Button({ children, onClick, mode, className = "", ...props }) {
   return (
