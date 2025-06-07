@@ -2,10 +2,10 @@ import { useContext, useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import { NotesContext } from "containers/App";
-import { Layout } from "components";
+import { Layout } from "layouts";
 import styles from "./styles.module.css";
 
-function NotePage() {
+export function NotePage() {
   const { id } = useParams();
   const { notes, loading } = useContext(NotesContext);
 

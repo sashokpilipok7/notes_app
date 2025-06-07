@@ -3,11 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 
 import api from "utils/api";
 import { NotesContext } from "containers/App";
-import { NoteCard, Layout } from "components";
+import { NoteCard } from "components";
+import { Layout } from "layouts";
 
 const DELETE_CONFIRMATION_MESSAGE = "Are you sure you want to delete this note?";
 
-function HomePage() {
+export function HomePage() {
   const navigate = useNavigate();
   const { notes, loading, removeNote } = useContext(NotesContext);
 
@@ -47,4 +48,3 @@ function HomePage() {
     </Layout>
   );
 }
-export default HomePage;

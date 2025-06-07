@@ -2,9 +2,7 @@ import { useState, useEffect, createContext } from "react";
 import { Route, Routes } from "react-router";
 
 import api from "utils/api";
-import HomePage from "containers/Home";
-import CreateNotePage from "containers/CreateNote";
-import NotePage from "containers/Note";
+import { HomePage, CreateNotePage, NotePage } from "containers";
 
 export const NotesContext = createContext({
   notes: [],
@@ -16,7 +14,7 @@ export const NotesContext = createContext({
   setLoading: () => {},
 });
 
-function App() {
+export function App() {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -70,5 +68,3 @@ function App() {
     </NotesContext.Provider>
   );
 }
-
-export default App;

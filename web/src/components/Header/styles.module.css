@@ -28,7 +28,7 @@
   }
 }
 
-@media screen and (min-width: var(--small-screen)) {
+@media (min-width: 768px) {
   .title {
     font-size: 24px;
   }

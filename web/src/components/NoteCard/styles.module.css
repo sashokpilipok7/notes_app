@@ -22,26 +22,26 @@
   }
 }
 
-.noteCardActions{
-   display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-left: 30px;
+.noteCardActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 30px;
 }
 
-.noteCardText{
-    max-height: 21px;
-    margin-top: 6px;
-    margin-bottom: 10px;
-    overflow: hidden;
+.noteCardText {
+  max-height: 21px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  overflow: hidden;
 }
 
-.noteCardLink{
-   text-decoration: none;
-    color: var(--primary-color);
+.noteCardLink {
+  text-decoration: none;
+  color: var(--primary-color);
 
-    &:hover {
-      color: var(--primary-color-dark);
-      text-decoration: underline;
-    }
+  &:hover {
+    color: var(--primary-color-dark);
+    text-decoration: underline;
+  }
 }

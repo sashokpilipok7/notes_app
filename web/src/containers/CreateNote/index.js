@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 
 import api from "utils/api";
 import { NotesContext } from "containers/App";
-import { Input, TextArea, Button, Layout } from "components";
+import { Input, TextArea, Button } from "components";
+import { Layout } from "layouts";
 import styles from "./styles.module.css";
 
 const NOTE_CREATE = "create";
@@ -15,7 +16,7 @@ const NOTE_EMPTY = {
   content: "",
 };
 
-function CreateNotePage({ mode }) {
+export function CreateNotePage({ mode }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const { notes, addNote, updateNote } = useContext(NotesContext);
@@ -91,4 +92,3 @@ function CreateNotePage({ mode }) {
 CreateNotePage.propTypes = {
   mode: PropTypes.string,
 };
-export default CreateNotePage;

@@ -2,6 +2,7 @@ import { notify } from "utils/notification";
 
 class ApiClient {
   constructor() {
+    // eslint-disable-next-line no-undef
     this.baseUrl = process.env.REACT_APP_API_URL;
   }
 
