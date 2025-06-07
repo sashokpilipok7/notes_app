@@ -1,5 +1,6 @@
+@import "./_variables2.css";
+
 /* CSS Reset */
-@import "variables.scss";
 *,
 *::before,
 *::after {
@@ -12,8 +13,7 @@ html,
 body {
   font-family: "Segoe UI", sans-serif;
   font-size: 16px;
-  color: $text-color;
-
+  color: var(--text-color);
   min-height: 100vh;
 }
 
@@ -25,10 +25,10 @@ body {
 
 .link {
   text-decoration: none;
-  color: $primary-color;
+  color: var(--primary-color);
 
   &:hover {
-    color: $primary-color-dark;
+    color: var(--primary-color-dark);
     text-decoration: underline;
   }
 }
@@ -39,14 +39,14 @@ body {
   right: 4px;
   padding: 8px;
 
-  background-color: $success-color;
-  color: $light-text-color;
-  border-left: 8px solid darken($success-color, 10%);
+  background-color: var(--success-color);
+  color: var(--light-text-color);
+  border-left: 8px solid #449d48; /* fallback for "darken" effect */
   font-size: 20px;
 
   &.error {
-    background-color: $error-bg;
-    border-color: darken($error-bg, 10%);
+    background-color: var(--error-bg);
+    border-color: #e63030; /* fallback for "darken" effect */
   }
 }
 
