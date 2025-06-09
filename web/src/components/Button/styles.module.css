@@ -1,0 +1,39 @@
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: var(--light-text-color);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    background-color: var(--primary-color-dark);
+    transform: scale(1.05);
+    transition: 0.1s ease-in-out;
+  }
+
+  &.disabled {
+    background-color: var(--inactive-color);
+    cursor: not-allowed;
+  }
+}
+
+.info {
+  background-color: var(--info-color);
+  color: var(--light-text-color);
+  &:hover {
+    filter: brightness(95%);
+  }
+}
+
+.danger {
+  background-color: var(--error-color);
+  color: var(--light-text-color);
+  &:hover {
+    filter: brightness(95%);
+  }
+}

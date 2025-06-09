@@ -1,0 +1,47 @@
+.noteCard {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  text-decoration: none;
+  color: var(--text-color);
+  margin-bottom: 20px;
+
+  &:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition:
+      box-shadow,
+      transform 0.3s ease;
+    transform: scale(1.02);
+  }
+}
+
+.noteCardActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 30px;
+}
+
+.noteCardText {
+  max-height: 21px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.noteCardLink {
+  text-decoration: none;
+  color: var(--primary-color);
+
+  &:hover {
+    color: var(--primary-color-dark);
+    text-decoration: underline;
+  }
+}
