@@ -60,7 +60,7 @@ export function NotesProvider({ children }) {
     };
 
     fetchNotes();
-  }, []);
+  }, [sendReq]);
 
   return (
     <NotesContext.Provider
